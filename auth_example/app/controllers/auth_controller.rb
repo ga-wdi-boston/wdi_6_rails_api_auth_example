@@ -4,7 +4,16 @@ class AuthController < ApplicationController
     credentials = login_params
     user = User.find_by email: credentials[:email]
     if user && user.authenticate(credentials[:password])
-      render json: "{ \"token\": \"#{user.token}\" }"
+      render json: { token: user.token }
+    else
+      head :bad_request
+    end
+  end
+
+  def register
+    if User.create(login_params
+       .merge(password_confirmation: nil)).valid?
+      head :created
     else
       head :bad_request
     end

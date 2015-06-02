@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   post '/login' => 'auth#login'
+  post '/register' => 'auth#register'
 
   resources :hello, except: [:new, :edit]
 
