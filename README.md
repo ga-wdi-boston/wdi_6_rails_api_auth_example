@@ -10,7 +10,7 @@ By the end of this lesson, students should be able to:
 
 ## Introduction
 
-Effective security is brokwn down into three areas:
+Effective security is broken down into three areas:
 
 - Authentication
 - Authorization
