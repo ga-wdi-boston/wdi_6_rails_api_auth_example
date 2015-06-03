@@ -17,6 +17,7 @@ $(function(){
       console.log(data);
     }).fail(function(jqxhr, textStatus, errorThrown){
       console.log(textStatus);
+      console.log(errorThrown);
     });
   });
   $('#get-index').on('click', function(){
