@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 
   # unconditionally create and set a new token
   def new_token
-    update_columns(token: set_token)
+    update_columns(token: set_token, updated_at: Time.current)
   end
 
   # expire old token
