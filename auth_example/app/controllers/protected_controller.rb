@@ -1,5 +1,5 @@
 # Everything except AuthController should inherit from this
-class ApiController < ApplicationController
+class ProtectedController < ApplicationController
   before_action :authenticate
 
   private

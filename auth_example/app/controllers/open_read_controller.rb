@@ -1,5 +1,5 @@
 #
-class OpenReadController < ApiController
+class OpenReadController < ProtectedController
   skip_before_action :authenticate, if: :read_action?
 
   private

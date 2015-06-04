@@ -1,5 +1,5 @@
 #
-class HelloController < OpenReadController
+class GoodbyeController < ProtectedController
   DATA = [{ hello: 'world' }, { hello: 'joe' }]
 
   def index
@@ -8,8 +8,7 @@ class HelloController < OpenReadController
 
   def show
     if (iid = params[:id].to_i) == 0
-      email = current_user ? current_user.email : 'Anonymous'
-      render json: { greeting: "Hello, #{email}" }
+      render json: { greeting: "Hello, #{current_user.email}"}
     elsif iid.between? 1, DATA.length
       render json: DATA[iid - 1]
     else
