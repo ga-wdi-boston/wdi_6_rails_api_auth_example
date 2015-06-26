@@ -1,5 +1,7 @@
 #
-class AuthController < ApplicationController
+class AuthController < ProtectedController
+  skip_before_action :authenticate, only: [:login, :register]
+
   def login
     credentials = login_params
     user = User.find_by email: credentials[:email]
